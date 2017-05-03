@@ -10,6 +10,7 @@ var testcases = []struct {
 	in, out string
 }{
 	{"3 1 2 2 1 2 3", "3\n"},
+	{"3 1 2 3 1 2 3", "2\n"},
 }
 
 func TestBeautifulPairs(t *testing.T) {
