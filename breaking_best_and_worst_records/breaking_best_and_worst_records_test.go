@@ -17,6 +17,7 @@ var testcases = []struct {
 }
 
 func TestBestWorst(t *testing.T) {
+	t.Parallel()
 	for _, c := range testcases {
 		stdin = strings.NewReader(c.in)
 		buff := new(bytes.Buffer)

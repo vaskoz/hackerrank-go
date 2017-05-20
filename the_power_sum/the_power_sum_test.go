@@ -27,6 +27,7 @@ var powerTestcases = []struct {
 }
 
 func TestThePowerSum(t *testing.T) {
+	t.Parallel()
 	for _, c := range testcases {
 		stdin = strings.NewReader(c.in)
 		buff := new(bytes.Buffer)
@@ -51,6 +52,7 @@ func BenchmarkThePowerSum(b *testing.B) {
 }
 
 func TestPower(t *testing.T) {
+	t.Parallel()
 	for _, c := range powerTestcases {
 		if out := Power(c.a, c.b); out != c.out {
 			t.Errorf("For %d to the %d should be %d, but got %d", c.a, c.b, c.out, out)
