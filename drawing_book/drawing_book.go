@@ -12,7 +12,8 @@ var stderr io.Writer = os.Stderr
 
 func main() {
 	var n, p int
-	fmt.Fscanf(stdin, "%d %d", &n, &p)
+	fmt.Fscanf(stdin, "%d", &n)
+	fmt.Fscanf(stdin, "%d", &p)
 	forward := p / 2
 	var backward int
 	if n%2 == 0 {
