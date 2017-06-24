@@ -23,44 +23,14 @@ func main() {
 		fmt.Fscanf(stdin, "%d %d", &r, &c)
 		obstacles[pos{r, c}] = struct{}{}
 	}
-	for r, c := qr, qc+1; r <= n && r > 0 && c <= n && c > 0; c, result = c+1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr, qc-1; r <= n && r > 0 && c <= n && c > 0; c, result = c-1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr+1, qc; r <= n && r > 0 && c <= n && c > 0; r, result = r+1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr-1, qc; r <= n && r > 0 && c <= n && c > 0; r, result = r-1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr+1, qc+1; r <= n && r > 0 && c <= n && c > 0; r, c, result = r+1, c+1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr-1, qc-1; r <= n && r > 0 && c <= n && c > 0; r, c, result = r-1, c-1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr+1, qc-1; r <= n && r > 0 && c <= n && c > 0; r, c, result = r+1, c-1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
-		}
-	}
-	for r, c := qr-1, qc+1; r <= n && r > 0 && c <= n && c > 0; r, c, result = r-1, c+1, result+1 {
-		if _, found := obstacles[pos{r, c}]; found {
-			break
+	directions := [][]int{{0, 1}, {0, -1}, {1, 0}, {-1, 0}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}}
+	for _, d := range directions {
+		for r, c := qr, qc; r <= n && r > 0 && c <= n && c > 0; r, c, result = r+d[0], c+d[1], result+1 {
+			if r == qr && c == qc {
+				result--
+			} else if _, found := obstacles[pos{r, c}]; found {
+				break
+			}
 		}
 	}
 	fmt.Fprintln(stdout, result)
