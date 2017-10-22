@@ -20,17 +20,16 @@ func main() {
 func PowerSum(sum, startWith, n, x int) int {
 	if sum == x {
 		return 1
-	} else {
-		count := 0
-		for start := startWith; start < x; start++ {
-			if newSum := sum + Power(start, n); newSum > x {
-				break
-			} else {
-				count += PowerSum(newSum, start+1, n, x)
-			}
-		}
-		return count
 	}
+	count := 0
+	for start := startWith; start < x; start++ {
+		if newSum := sum + Power(start, n); newSum > x {
+			break
+		} else {
+			count += PowerSum(newSum, start+1, n, x)
+		}
+	}
+	return count
 }
 
 func Power(a, b int) int {

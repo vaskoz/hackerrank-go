@@ -21,7 +21,7 @@ func main() {
 	for i := 0; i < k/2+1; i++ {
 		if i == 0 || k == i*2 {
 			if mod[i] != 0 {
-				result += 1
+				result++
 			}
 		} else {
 			if mod[i] > mod[k-i] {

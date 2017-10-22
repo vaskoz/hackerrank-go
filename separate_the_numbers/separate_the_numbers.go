@@ -16,7 +16,7 @@ func main() {
 	for i := 0; i < q; i++ {
 		var s string
 		fmt.Fscanf(stdin, "%s", &s)
-		var found bool = false
+		var found = false
 		for l := 1; l <= len(s)/2; l++ {
 			n, _ := strconv.Atoi(s[0:l])
 			index := l

@@ -18,11 +18,11 @@ func main() {
 		var x int
 		fmt.Fscanf(stdin, "%d", &x)
 		if x > 0 {
-			positive += 1
+			positive++
 		} else if x == 0 {
-			zeros += 1
+			zeros++
 		} else {
-			negative += 1
+			negative++
 		}
 	}
 	nf := float64(n)

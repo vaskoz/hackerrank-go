@@ -10,7 +10,7 @@ var stdin io.Reader = os.Stdin
 var stdout io.Writer = os.Stdout
 var stderr io.Writer = os.Stderr
 
-var magic [][]int = [][]int{
+var magic = [][]int{
 	{8, 1, 6, 3, 5, 7, 4, 9, 2},
 	{6, 1, 8, 7, 5, 3, 2, 9, 4},
 	{4, 9, 2, 3, 5, 7, 8, 1, 6},

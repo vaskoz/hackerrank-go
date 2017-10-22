@@ -21,7 +21,7 @@ func main() {
 			if i%2 == 0 {
 				height *= 2
 			} else {
-				height += 1
+				height++
 			}
 		}
 		fmt.Fprintln(stdout, height)

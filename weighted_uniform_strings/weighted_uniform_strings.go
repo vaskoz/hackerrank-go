@@ -13,7 +13,7 @@ func main() {
 	var s string
 	fmt.Fscanf(stdin, "%s", &s)
 	u := make(map[int]struct{})
-	var last byte = 0
+	var last byte
 	freq := 1
 	for i := 0; i < len(s); i++ {
 		if val := int(s[i] - 'a' + 1); s[i] != last {
